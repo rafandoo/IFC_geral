@@ -68,7 +68,7 @@ public class esperancaMat {
 		}
 	}
 	
-	//BLOCOS DE COMPARAÇÂO
+	//BLOCOS DE COMPARACAO
 	public int esp1() {
 		int cont = 0;
 
@@ -125,8 +125,8 @@ public class esperancaMat {
 		possibilidadeTotal(getPs(), getJ());
 
 		StringBuilder builder = new StringBuilder();
-		builder.append("==== RESULTADOS ====\n\n");
-		builder.append("1- Esperanca: ");
+		builder.append("==== RESULTADOS ====\n");
+		builder.append("\n1- Esperanca: ");
 		builder.append(esp1() + "/" + getPst());
 		builder.append("\n2- Esperanca: ");
 		builder.append(esp2() + "/" + getPst());
@@ -137,5 +137,4 @@ public class esperancaMat {
 
 		return builder.toString();
 	}
-
 }
