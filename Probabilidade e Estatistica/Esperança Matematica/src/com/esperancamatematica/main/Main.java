@@ -1,5 +1,8 @@
+package com.esperancamatematica.main;
 
 import java.util.Scanner;
+
+import com.esperancamatematica.classes.esperancaMat;
 
 public class Main {
         
