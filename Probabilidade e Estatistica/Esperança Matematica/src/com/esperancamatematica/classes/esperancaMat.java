@@ -6,7 +6,8 @@ public class esperancaMat {
 
 	// ATRIBUTOS			
 	private int possibilidades;				
-	private int jogadas;			
+	private int jogadas;	
+	private int tipo;	
 	
 	// INSTANCIAS
 	List<Integer> x = new ArrayList<>();
@@ -27,6 +28,13 @@ public class esperancaMat {
 		this.jogadas = jogadas;
 	}
 	
+	public int getTipo() {
+		return tipo;
+	}
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
     // METODOS 
 	public boolean addList(int num) {
 		return(x.add(num));
@@ -53,7 +61,7 @@ public class esperancaMat {
 	}
 	
 	//BLOCOS DE COMPARACAO
-	public int esp() {
+	public int espDado() {
 		int cont = 0;
 
 		for(int i = 0; i < x.size(); i++) {
@@ -66,69 +74,24 @@ public class esperancaMat {
 		return cont;
 	}
 
-/*
-	public int esp1() {
+	//1=cara 2=coroa
+	public int espMoeda() {
 		int cont = 0;
 
 		for(int i = 0; i < x.size(); i++) {
 			for(int c = 0; c < x.size(); c++) {
-				if(y.get(i) + y.get(continuidade(c)) >= 10) {
-					cont++;
-				} 
-			}
-		}
-		return cont;
-	}
-	
-	public int esp2() {
-		int cont = 0;
-
-		for(int i = 0; i < x.size(); i++) {
-			if(y.get(i) + y.get(continuidade(i)) <= 5) {
-				cont++;
-			}
-		}
-		return cont;
-	}
-	
-	public int esp3() {	
-		int cont = 0;
-
-		for(int i = 0; i < x.size(); i++) {
-			for(int c = 0; c < x.size(); c++) {
-				if(y.get(i) < y.get(continuidade(c))) {
-					cont++;
-				} 
-			}
-		}
-		return cont;
-	}
-	
-	public int esp4() {
-		int cont = 0;
-
-		for(int i = 0; i < x.size(); i++) {
-			for(int c = 0; c < x.size(); c++) {
-				if(y.get(i) == 4 || y.get(continuidade(c)) == 4) {
-					cont++;
-				} 
-			}
-		}
-		return cont;
-	}
-
-	public int esp5() {
-		int cont = 0;
-		for(int i = 0; i < x.size(); i++) {
-			for(int c = 0; c < x.size(); c++) {
-				if(y.get(i) == 1 || y.get(continuidade(c)) == 1) {
+				if(y.get(continuidade(c)) == 1) {
 					cont++;
 				}
 			}
 		}
-		return cont;
+		return 0;
 	}
-*/
+
+	public String tipoEntrada() {
+
+	}
+
 	
 	@Override
 	public String toString() {
@@ -142,7 +105,7 @@ public class esperancaMat {
 		builder.append("\nPossibilidades: ");
 		builder.append(possibilidadeTotal(getPossibilidades(), getJogadas()));
 		builder.append("\nEsperanca: ");
-		builder.append(esp() + "/" + possibilidadeTotal(getPossibilidades(), getJogadas()));
+		builder.append(espDado() + "/" + possibilidadeTotal(getPossibilidades(), getJogadas()));
 
 		return builder.toString();
 	}
