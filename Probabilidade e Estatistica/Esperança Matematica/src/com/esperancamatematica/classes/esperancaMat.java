@@ -70,6 +70,20 @@ public class esperancaMat {
 	}
 	
 	//BLOCOS DE COMPARACAO
+	public int esp() {
+		int cont = 0;
+
+		for(int i = 0; i < x.size(); i++) {
+			for(int c = 0; c < x.size(); c++) {
+				if(y.get(i) == y.get(continuidade(c))) {
+					cont++;
+				} 
+			}
+		}
+		return cont;
+	}
+
+/*
 	public int esp1() {
 		int cont = 0;
 
@@ -131,6 +145,7 @@ public class esperancaMat {
 		}
 		return cont;
 	}
+*/
 	
 	@Override
 	public String toString() {
@@ -139,16 +154,12 @@ public class esperancaMat {
 
 		StringBuilder builder = new StringBuilder();
 		builder.append("==== RESULTADOS ====\n");
-		builder.append("\n1- Esperanca: ");
-		builder.append(esp1() + "/" + getPst());
-		builder.append("\n2- Esperanca: ");
-		builder.append(esp2() + "/" + getPst());
-		builder.append("\n3- Esperanca: ");
-		builder.append(esp3() + "/" + getPst());
-		builder.append("\n4- Esperanca: ");
-		builder.append(esp4() + "/" + getPst());
-		builder.append("\n5- Esperanca CA|CO: ");
-		builder.append(esp5() + "/" + getPst());
+		builder.append("\nJogadas: ");
+		builder.append(getJ());
+		builder.append("\nPossibilidades: ");
+		builder.append(getPst());
+		builder.append("\nEsperanca: ");
+		builder.append(esp() + "/" + getPst());
 
 		return builder.toString();
 	}
