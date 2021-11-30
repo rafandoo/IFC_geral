@@ -110,17 +110,6 @@ public class esperancaMat {
 		}
 	}
 
-	public void imprimex() {
-		for(int i = 0; i < x.size(); i++) {
-			System.out.println(x.get(i));
-		}
-	}
-	
-	public void imprimey() {
-		for(int i = 0; i < y.size(); i++) {
-			System.out.println(y.get(i));
-		}
-	}
 	
 	@Override
 	public String toString() {
