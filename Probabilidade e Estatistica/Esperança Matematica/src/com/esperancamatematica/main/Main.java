@@ -17,7 +17,7 @@ public class Main {
         if(opc == 1 || opc == 2) {
             em.setTipo(opc);
         } else {
-            System.out.println("Opção invalida!");
+            System.out.println("Opcao invalida!");
             System.exit(0);
         }
         
@@ -26,5 +26,10 @@ public class Main {
         
         System.out.println("\n"+em);
         ent.close();
+        
+        System.out.println("\n\nx:");
+        em.imprimex();
+        System.out.println("\ny:");
+        em.imprimey();
     }
 }

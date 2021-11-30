@@ -53,7 +53,20 @@ public class esperancaMat {
 	}
 	
 	public void gerarList() {
-		for(int i = 0; i < getJogadas(); i++) {
+		if(getTipo() == 1) {
+			setPossibilidades(6);
+			for(int i = 1; i <= 6; i++) {
+				x.add(i);
+			}
+		} else {
+			setPossibilidades(2);
+			for(int i = 1; i<=2; i++) {
+				x.add(i);
+			}
+		}
+			
+		
+		for(int i = 1; i <= getJogadas(); i++) {
 			for(int c = 0; c < x.size(); c++) {
 				y.add(x.get(c));
 			}
@@ -64,9 +77,13 @@ public class esperancaMat {
 	public int espDado() {
 		int cont = 0;
 
+		if(getJogadas() == 1) {
+			return 0;
+		}
+		
 		for(int i = 0; i < x.size(); i++) {
 			for(int c = 0; c < x.size(); c++) {
-				if(y.get(i) == y.get(continuidade(c))) {
+				if(y.get(i) == y.get(c + 6)) {
 					cont++;
 				} 
 			}
@@ -77,12 +94,9 @@ public class esperancaMat {
 	//1=cara 2=coroa
 	public int espMoeda() {
 		int cont = 0;
-
-		for(int i = 0; i < x.size(); i++) {
-			for(int c = 0; c < x.size(); c++) {
-				if(y.get(continuidade(c)) == 1) {
-					cont++;
-				}
+		for(int c = 0; c < y.size(); c++) {
+			if(y.get(c) == 1) {
+				cont++;
 			}
 		}
 		return cont;
@@ -96,11 +110,21 @@ public class esperancaMat {
 		}
 	}
 
+	public void imprimex() {
+		for(int i = 0; i < x.size(); i++) {
+			System.out.println(x.get(i));
+		}
+	}
+	
+	public void imprimey() {
+		for(int i = 0; i < y.size(); i++) {
+			System.out.println(y.get(i));
+		}
+	}
 	
 	@Override
 	public String toString() {
 		gerarList();
-		possibilidadeTotal(getPossibilidades(), getJogadas());
 
 		StringBuilder builder = new StringBuilder();
 		builder.append("==== RESULTADOS ====\n");
