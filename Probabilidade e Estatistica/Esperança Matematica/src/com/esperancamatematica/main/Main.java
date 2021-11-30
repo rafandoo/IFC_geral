@@ -18,6 +18,7 @@ public class Main {
             em.setTipo(opc);
         } else {
             System.out.println("Opção invalida!");
+            System.exit(0);
         }
         
         System.out.print("\nDigite o numero de jogadas: ");
