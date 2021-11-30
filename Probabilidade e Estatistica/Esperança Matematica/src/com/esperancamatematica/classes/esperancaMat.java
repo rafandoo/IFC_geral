@@ -85,11 +85,15 @@ public class esperancaMat {
 				}
 			}
 		}
-		return 0;
+		return cont;
 	}
 
 	public String tipoEntrada() {
-
+		if (getTipo() == 1) {
+			return (Integer.toString(espDado()) + "/" + possibilidadeTotal(getPossibilidades(), getJogadas()));
+		} else {
+			return (Integer.toString(espMoeda()) + "/" + possibilidadeTotal(getPossibilidades(), getJogadas()));
+		}
 	}
 
 	
@@ -105,7 +109,7 @@ public class esperancaMat {
 		builder.append("\nPossibilidades: ");
 		builder.append(possibilidadeTotal(getPossibilidades(), getJogadas()));
 		builder.append("\nEsperanca: ");
-		builder.append(espDado() + "/" + possibilidadeTotal(getPossibilidades(), getJogadas()));
+		builder.append(tipoEntrada());
 
 		return builder.toString();
 	}
