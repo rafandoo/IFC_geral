@@ -26,10 +26,5 @@ public class Main {
         
         System.out.println("\n"+em);
         ent.close();
-        
-        System.out.println("\n\nx:");
-        em.imprimex();
-        System.out.println("\ny:");
-        em.imprimey();
     }
 }
