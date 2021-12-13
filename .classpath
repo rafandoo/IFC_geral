@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="Métodos Numéricos/Algoritmo de eliminação/src"/>
-	<classpathentry kind="src" path="Probabilidade e Estatistica/Esperança Matematica/src"/>
+	<classpathentry kind="src" path="Probabilidade e Estatistica/src"/>
+	<classpathentry kind="output" path="Probabilidade e Estatistica/bin"/>
 	<classpathentry kind="output" path="Métodos Numéricos/Algoritmo de eliminação/bin"/>
 </classpath>
