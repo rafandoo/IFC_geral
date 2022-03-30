@@ -1,4 +1,5 @@
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <stdio.h>
 #include <unistd.h>
 
@@ -10,7 +11,7 @@ int main ()
     if (pid == 0) {
         valor += 15;
     } else if (pid > 0) {
-        //wait(pid);
+        //wait(&valor);
         printf("Valor: %d", valor);
     }
     return 0;
