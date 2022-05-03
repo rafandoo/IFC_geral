@@ -1,16 +1,27 @@
 package com.impressao;
 
-public class Impressora implements Runnable {
+import java.util.concurrent.Semaphore;
 
-    private FilaDeImpressao filaDeImpressao;
+public class Impressora {
 
-    public Impressora(FilaDeImpressao filaDeImpressao) {
-        this.filaDeImpressao = filaDeImpressao;
+    private final Semaphore s;
+
+    public Impressora() {
+        s = new Semaphore(1);
     }
 
-    @Override
-    public void run() {
-        System.out.printf("#%s: iniciado a impressao \n", Thread.currentThread().getName());
-        filaDeImpressao.trabalhoDeImpressao(new Object());
+    public void trabalhoDeImpressao(Object documento) {
+        try {
+            s.acquire();
+            Long duracao = (long) (Math.random() * 10000);
+            System.out.println("#" + Thread.currentThread().getName()
+                    + " Fila de impressao: imprimindo um documento durante " + (duracao / 1000) + " segundos");
+            Thread.sleep(duracao);
+        } catch (InterruptedException e) {
+            System.out.println("Erro: " + e.toString());
+        } finally {
+            System.out.printf("#%s: o documento foi impresso \n", Thread.currentThread().getName());
+            s.release();
+        }
     }
 }
