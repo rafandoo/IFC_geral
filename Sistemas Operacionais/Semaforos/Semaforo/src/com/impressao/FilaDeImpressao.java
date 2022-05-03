@@ -1,4 +1,4 @@
-package com.FilaDeImpressao;
+package com.impressao;
 
 import java.util.concurrent.Semaphore;
 

@@ -1,10 +1,10 @@
-package com.FilaDeImpressao;
+package com.impressao;
 
-public class impressao implements Runnable {
+public class Impressora implements Runnable {
 
     private FilaDeImpressao filaDeImpressao;
 
-    public impressao(FilaDeImpressao filaDeImpressao) {
+    public Impressora(FilaDeImpressao filaDeImpressao) {
         this.filaDeImpressao = filaDeImpressao;
     }
 
